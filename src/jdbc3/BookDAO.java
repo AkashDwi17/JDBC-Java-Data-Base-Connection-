@@ -161,6 +161,7 @@ public class BookDAO {
 			if (rs.next()) {
 				int available = rs.getInt("quantity");
 				if (available >= reqQuantity) {
+					available -= reqQuantity;
 					System.out.println(" Book issued successfully!");
                 } else {
                     System.out.println(" Insufficient stock. Available: " + available);
@@ -177,3 +178,4 @@ public class BookDAO {
 	
 	
 }
+
